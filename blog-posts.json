@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Automating Document Workflows with Playwright and Python",
+    "date": "2025-10-20",
+    "excerpt": "Lessons from industrial automation at BHEL R&D. This post shares robust scraping patterns and practical tips for building real-world solutions.",
+    "url": "posts/automation-playwright.html"
+  },
+  {
+    "title": "Getting Started with NLP: Sentiment Analysis Project Walkthrough",
+    "date": "2025-10-10",
+    "excerpt": "Natural Language Processing can seem intimidating, but with the right approach, anyone can build effective text analysis tools. Here's my step-by-step guide.",
+    "url": "posts/nlp-sentiment.html"
+  },
+  {
+    "title": "The Power of No-Code Automation: Make vs Zapier",
+    "date": "2025-09-28",
+    "excerpt": "No-code tools have changed how we automate. After working with both Make and Zapier, here are the strengths, weaknesses, and use cases for each.",
+    "url": "posts/make-vs-zapier.html"
+  },
+  {
+    "title": "Machine Learning for Business: Predicting Bankruptcy",
+    "date": "2025-09-15",
+    "excerpt": "Financial prediction models can save companies millions. In this post I explain how machine learning algorithms analyze financial indicators to flag business risk.",
+    "url": "posts/bankruptcy-model.html"
+  }
+]
