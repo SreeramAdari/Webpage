@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganeswara Sai Sreeram Adari - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: #f0f4ff;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            background: #667eea;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item, .education-item, .project-card {
+            background: #f8f9ff;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+            border-left: 4px solid #764ba2;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover, .education-item:hover, .project-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .project-card {
+            border-left-color: #667eea;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Enhanced Blog Styles */
+        .blog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .blog-filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .add-blog-btn {
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .add-blog-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.1) 75%);
+            background-size: 20px 20px;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .blog-date {
+            color: #764ba2;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .blog-category {
+            background: #667eea;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .blog-card h3 {
+            color: #333;
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin: 1rem 0;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .read-more {
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #764ba2;
+            transform: translateX(5px);
+        }
+
+        .blog-stats {
+            display: flex;
+            gap: 1rem;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .close {
+            color: white;
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close:hover {
+            transform: scale(1.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 20px 20px 0 0;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        .blog-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .edit-btn, .delete-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .edit-btn {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .delete-btn {
+            background: #f44336;
+            color: white;
+        }
+
+        .edit-btn:hover, .delete-btn:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            section {
+                padding: 2rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 5% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showSection('home')">Home</a></li>
+            <li><a href="#about" onclick="showSection('about')">About</a></li>
+            <li><a href="#experience" onclick="showSection('experience')">Experience</a></li>
+            <li><a href="#projects" onclick="showSection('projects')">Projects</a></li>
+            <li><a href="#skills" onclick="showSection('skills')">Skills</a></li>
+            <li><a href="#blog" onclick="showSection('blog')">Blog</a></li>
+            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="hero">
+            <h1>Ganeswara Sai Sreeram Adari</h1>
+            <p style="font-size: 1.2rem; color: #555; margin: 1rem 0;">Data Science & AI Enthusiast | Python Developer | Automation Specialist</p>
+            <div class="contact-info">
+                <a href="mailto:sreeramadari@gmail.com">📧 Email</a>
+                <a href="tel:7396989138">📱 7396989138</a>
+                <a href="https://www.linkedin.com/in/ganeswara-sai-sreeram-adari-6b4b18223" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/SreeramAdari" target="_blank">💻 GitHub</a>
+            </div>
+            <p style="margin-top: 1rem; color: #666;">📍 Anakapalle, Vishakapatanam, Andhra Pradesh</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                I'm a Data Science and AI enthusiast with hands-on experience in NLP, web scraping, and no-code automation. 
+                Currently working as an Apprentice at BHEL R&D, where I build real-world solutions using Python, LLMs, and Playwright. 
+                I'm passionate about solving problems using data, automation, and generative AI.
+            </p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Apprentice - Bharat Heavy Electricals Limited (BHEL)</h3>
+                <p style="color: #764ba2; font-weight: 600;">R&D, Hyderabad | Dec 2024 – Nov 2025</p>
+                <ul>
+                    <li>Contributed to industrial R&D projects by automating document workflows using Python and Playwright</li>
+                    <li>Built a scraping automation tool to extract BIS standards using Playwright and stored in MySQL, improving data availability</li>
+                    <li>Collaborated with engineers to build Excel reporting automation with Pandas and Openpyxl</li>
+                    <li>Increased document handling efficiency by ~60% through Python-based automation solutions</li>
+                    <li>Worked with tools like MySQL, Pandas, Playwright, and Excel in a live industrial environment</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <div class="project-card">
+                <h3>BIS Standards Scraping Automation</h3>
+                <p>Created an automated web-scraping solution with Playwright, MySQL, Pandas, and Openpyxl to process and organize Bureau of Indian Standards (BIS) documents for BHEL.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Sentiment Analysis with NLP</h3>
+                <p>Applied natural language processing to classify user reviews by sentiment, improving customer feedback insights as part of an ExcelR capstone project.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Inventory Management</h3>
+                <p>Developed a Python-based inventory management system with machine-learning models to predict stockouts, balance class data with SMOTE, and automate keyword extraction from Excel for faster material classification and stock analysis.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Bankruptcy Prevention</h3>
+                <p>Built a machine-learning model using financial indicators to predict company bankruptcy, featuring data preprocessing, feature engineering, and evaluation of multiple classification algorithms for high accuracy.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Solar Power Prediction</h3>
+                <p>Implemented a forecasting model to predict solar energy output from weather and historical power data, enabling better energy planning and grid management.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Sign Language Recognition</h3>
+                <p>Trained a custom computer-vision model to recognize and classify sign language gestures from image data, facilitating accessible communication.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Light Sensory Car (IoT Project)</h3>
+                <p>Designed an IoT-enabled car navigation system using light sensors and microcontroller integration for autonomous movement based on environmental lighting.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Daily Journal (Web App)</h3>
+                <p>Developed a responsive, browser-based journal application using HTML, CSS, and JavaScript for easy daily note-taking and data storage.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming</h4>
+                    <p>Python, C/C++, HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Data Science</h4>
+                    <p>Pandas, NumPy, Scikit-learn, SMOTE, Model Evaluation, Data Preprocessing</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Machine Learning & AI</h4>
+                    <p>NLP, Sentiment Analysis, Classification Models, LLM Workflows, Prompt Engineering</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Automation</h4>
+                    <p>Playwright, Make, Zapier, Web Scraping</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Data Tools</h4>
+                    <p>MySQL, Tableau, Excel (Advanced), Openpyxl</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Soft Skills</h4>
+                    <p>Communication, Teamwork, Analytical Thinking</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Certifications</h3>
+            <div style="margin-top: 1rem;">
+                <span class="cert-badge">Data Science - ExcelR</span>
+                <span class="cert-badge">Advanced Google Analytics</span>
+                <span class="cert-badge">Generative AI Mastermind - Outskill</span>
+                <span class="cert-badge">Python Basics - Infosys Springboard</span>
+                <span class="cert-badge">Communication Skills - TCS iON</span>
+            </div>
+        </section>
+
+        <section id="blog">
+            <div class="blog-header">
+                <div>
+                    <h2 style="margin-bottom: 0.5rem;">Blog</h2>
+                    <p style="color: #666;">Sharing insights on Data Science, AI, and Automation</p>
+                </div>
+                <button class="add-blog-btn" onclick="openAddBlogModal()">✍️ Add New Blog</button>
+            </div>
+
+            <div class="blog-filters">
+                <button class="filter-btn active" onclick="filterBlogs('all')">All Posts</button>
+                <button class="filter-btn" onclick="filterBlogs('AI')">AI & ML</button>
+                <button class="filter-btn" onclick="filterBlogs('Automation')">Automation</button>
+                <button class="filter-btn" onclick="filterBlogs('Tutorial')">Tutorials</button>
+                <button class="filter-btn" onclick="filterBlogs('Career')">Career</button>
+            </div>
+
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blogs will be loaded here -->
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            </p>
+            <div class="contact-info">
+                <a href="mailto:sreeramadari@gmail.com">📧 sreeramadari@gmail.com</a>
+                <a href="tel:7396989138">📱 +91 7396989138</a>
+                <a href="https://www.linkedin.com/in/ganeswara-sai-sreeram-adari-6b4b18223" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/SreeramAdari" target="_blank">💻 GitHub</a>
+            </div>
+        </section>
+
+        <div class="education-item">
+            <h3>Education</h3>
+            <p><strong>B.Tech in Information Technology</strong> - Vignan Institute Of Information Technology</p>
+            <p>CGPA: 7.3 | Jul 2024</p>
+            <p style="margin-top: 1rem;"><strong>Intermediate (MPC)</strong> - Tirumala Junior College</p>
+            <p>CGPA: 9.3 | Apr 2020</p>
+            <p style="margin-top: 1rem;"><strong>10th Grade</strong> - Bhashyam Public School</p>
+            <p>CGPA: 9.3 | Mar 2018</p>
+        </div>
+    </div>
+
+    <!-- Add Blog Modal -->
+    <div id="addBlogModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeAddBlogModal()">&times;</span>
+                <h2 style="margin: 0; color: white;">Create New Blog Post</h2>
+            </div>
+            <div class="modal-body">
+                <form id="blogForm" onsubmit="submitBlog(event)">
+                    <div class="form-group">
+                        <label for="blogTitle">Title *</label>
+                        <input type="text" id="blogTitle" required placeholder="Enter your blog title">
+                    </div>
+                    <div class="form-group">
+                        <label for="blogCategory">Category *</label>
+                        <select id="blogCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="AI">AI & ML</option>
+                            <option value="Automation">Automation</option>
+                            <option value="Tutorial">Tutorial</option>
+                            <option value="Career">Career</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="blogExcerpt">Excerpt *</label>
+                        <textarea id="blogExcerpt" required placeholder="Brief description of your blog post"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="blogContent">Full Content *</label>
+                        <textarea id="blogContent" required placeholder="Write your full blog post here..." style="min-height: 250px;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="blogIcon">Icon (Emoji)</label>
+                        <input type="text" id="blogIcon" placeholder="e.g., 🤖, 💡, 🚀" maxlength="2">
+                    </div>
+                    <button type="submit" class="submit-btn">Publish Blog Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Blog Modal -->
+    <div id="viewBlogModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeViewBlogModal()">&times;</span>
+                <h2 style="margin: 0; color: white;" id="viewBlogTitle"></h2>
+            </div>
+            <div class="modal-body">
+                <div id="viewBlogMeta" style="margin-bottom: 1.5rem;"></div>
+                <div id="viewBlogContent" style="line-height: 1.8; color: #333;"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color: #667eea; font-weight: 600;">© 2025 Ganeswara Sai Sreeram Adari. All rights reserved.</p>
+        <p style="color: #666; margin-top: 0.5rem;">Languages: English • Telugu • Hindi</p>
+    </footer>
+
+    <script>
+        // In-memory blog storage
+        let blogs = [
+            {
+                id: 1,
+                title: "Automating Document Workflows with Playwright and Python",
+                category: "Automation",
+                excerpt: "My experience at BHEL R&D taught me valuable lessons about industrial automation. In this post, I share practical tips for building robust web scraping solutions that handle real-world complexity...",
+                content: "Working at BHEL R&D has been an incredible learning experience. One of the most challenging projects involved automating document workflows using Playwright and Python. The key is understanding the document structure and handling edge cases properly...",
+                date: "October 20, 2025",
+                icon: "🤖",
+                views: 145,
+                likes: 23
+            },
+            {
+                id: 2,
+                title: "Getting Started with NLP: Sentiment Analysis Project Walkthrough",
+                category: "Tutorial",
+                excerpt: "Natural Language Processing can seem intimidating at first, but with the right approach, anyone can build powerful text analysis tools. Here's how I built my sentiment analysis system...",
+                content: "NLP is one of the most exciting fields in data science. In this tutorial, I'll walk you through building a sentiment analysis system from scratch using Python and scikit-learn...",
+                date: "October 10, 2025",
+                icon: "💬",
+                views: 289,
+                likes: 45
+            },
+            {
+                id: 3,
+                title: "The Power of No-Code Automation: Make vs Zapier",
+                category: "Automation",
+                excerpt: "No-code tools are revolutionizing how we approach automation. After working with both Make and Zapier extensively, I've discovered the strengths and use cases for each platform...",
+                content: "No-code automation tools have democratized workflow automation. In this comparison, I dive deep into Make and Zapier, exploring when to use each tool...",
+                date: "September 28, 2025",
+                icon: "⚡",
+                views: 178,
+                likes: 31
+            },
+            {
+                id: 4,
+                title: "Machine Learning for Business: Predicting Bankruptcy",
+                category: "AI",
+                excerpt: "Financial prediction models can save companies millions. In this deep dive, I explain how machine learning algorithms analyze financial indicators to predict business failure...",
+                content: "Predicting bankruptcy is a critical application of machine learning in finance. Using classification algorithms and financial indicators, we can build models that identify at-risk companies early...",
+                date: "September 15, 2025",
+                icon: "📊",
+                views: 234,
+                likes: 38
+            }
+        ];
+
+        let currentFilter = 'all';
+        let nextId = 5;
+
+        function loadBlogs() {
+            const blogGrid = document.getElementById('blogGrid');
+            const filteredBlogs = currentFilter === 'all' 
+                ? blogs 
+                : blogs.filter(blog => blog.category === currentFilter);
+
+            blogGrid.innerHTML = filteredBlogs.map(blog => `
+                <div class="blog-card" onclick="viewBlog(${blog.id})">
+                    <div class="blog-image">
+                        ${blog.icon || '📝'}
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">${blog.date}</span>
+                            <span class="blog-category">${blog.category}</span>
+                        </div>
+                        <h3>${blog.title}</h3>
+                        <p class="blog-excerpt">${blog.excerpt}</p>
+                        <div class="blog-footer">
+                            <a class="read-more">Read More →</a>
+                            <div class="blog-stats">
+                                <span>👁️ ${blog.views}</span>
+                                <span>❤️ ${blog.likes}</span>
+                            </div>
+                        </div>
+                        <div class="blog-actions">
+                            <button class="edit-btn" onclick="event.stopPropagation(); editBlog(${blog.id})">Edit</button>
+                            <button class="delete-btn" onclick="event.stopPropagation(); deleteBlog(${blog.id})">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterBlogs(category) {
+            currentFilter = category;
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            loadBlogs();
+        }
+
+        function openAddBlogModal() {
+            document.getElementById('addBlogModal').style.display = 'block';
+            document.getElementById('blogForm').reset();
+        }
+
+        function closeAddBlogModal() {
+            document.getElementById('addBlogModal').style.display = 'none';
+        }
+
+        function submitBlog(event) {
+            event.preventDefault();
+            
+            const title = document.getElementById('blogTitle').value;
+            const category = document.getElementById('blogCategory').value;
+            const excerpt = document.getElementById('blogExcerpt').value;
+            const content = document.getElementById('blogContent').value;
+            const icon = document.getElementById('blogIcon').value || '📝';
+
+            const newBlog = {
+                id: nextId++,
+                title: title,
+                category: category,
+                excerpt: excerpt,
+                content: content,
+                date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+                icon: icon,
+                views: 0,
+                likes: 0
+            };
+
+            blogs.unshift(newBlog);
+            loadBlogs();
+            closeAddBlogModal();
+            
+            alert('Blog post published successfully! 🎉\n\nNote: This is stored in memory. To persist data, connect to a MySQL database using a backend server (Node.js, Python Flask, etc.)');
+        }
+
+        function viewBlog(id) {
+            const blog = blogs.find(b => b.id === id);
+            if (blog) {
+                blog.views++;
+                document.getElementById('viewBlogTitle').textContent = blog.title;
+                document.getElementById('viewBlogMeta').innerHTML = `
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                        <span class="blog-date">${blog.date}</span>
+                        <span class="blog-category">${blog.category}</span>
+                    </div>
+                    <div style="display: flex; gap: 1.5rem; margin-top: 1rem; color: #666;">
+                        <span>👁️ ${blog.views} views</span>
+                        <span>❤️ ${blog.likes} likes</span>
+                    </div>
+                `;
+                document.getElementById('viewBlogContent').innerHTML = blog.content.replace(/\n/g, '<br><br>');
+                document.getElementById('viewBlogModal').style.display = 'block';
+                loadBlogs();
+            }
+        }
+
+        function closeViewBlogModal() {
+            document.getElementById('viewBlogModal').style.display = 'none';
+        }
+
+        function editBlog(id) {
+            const blog = blogs.find(b => b.id === id);
+            if (blog) {
+                document.getElementById('blogTitle').value = blog.title;
+                document.getElementById('blogCategory').value = blog.category;
+                document.getElementById('blogExcerpt').value = blog.excerpt;
+                document.getElementById('blogContent').value = blog.content;
+                document.getElementById('blogIcon').value = blog.icon;
+                
+                blogs = blogs.filter(b => b.id !== id);
+                
+                openAddBlogModal();
+            }
+        }
+
+        function deleteBlog(id) {
+            if (confirm('Are you sure you want to delete this blog post?')) {
+                blogs = blogs.filter(blog => blog.id !== id);
+                loadBlogs();
+            }
+        }
+
+        function showSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        window.onclick = function(event) {
+            const addModal = document.getElementById('addBlogModal');
+            const viewModal = document.getElementById('viewBlogModal');
+            if (event.target === addModal) {
+                closeAddBlogModal();
+            }
+            if (event.target === viewModal) {
+                closeViewBlogModal();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBlogs();
+
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeIn 0.6s ease';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        /* 
+        DATABASE INTEGRATION GUIDE:
+        
+        To connect this to MySQL, you need a backend server. Here's a quick guide:
+
+        1. BACKEND SETUP (Node.js + Express + MySQL):
+        
+        // Install: npm install express mysql2 cors body-parser
+        
+        const express = require('express');
+        const mysql = require('mysql2');
+        const cors = require('cors');
+        const bodyParser = require('body-parser');
+
+        const app = express();
+        app.use(cors());
+        app.use(bodyParser.json());
+
+        const db = mysql.createConnection({
+            host: 'localhost',
+            user: 'your_username',
+            password: 'your_password',
+            database: 'portfolio_db'
+        });
+
+        // Create table
+        const createTableQuery = `
+            CREATE TABLE IF NOT EXISTS blogs (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                title VARCHAR(255) NOT NULL,
+                category VARCHAR(50),
+                excerpt TEXT,
+                content TEXT,
+                date VARCHAR(50),
+                icon VARCHAR(10),
+                views INT DEFAULT 0,
+                likes INT DEFAULT 0,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        `;
+
+        db.query(createTableQuery, (err) => {
+            if (err) console.error(err);
+        });
+
+        // GET all blogs
+        app.get('/api/blogs', (req, res) => {
+            db.query('SELECT * FROM blogs ORDER BY id DESC', (err, results) => {
+                if (err) return res.status(500).json({ error: err.message });
+                res.json(results);
+            });
+        });
+
+        // POST new blog
+        app.post('/api/blogs', (req, res) => {
+            const { title, category, excerpt, content, date, icon } = req.body;
+            const query = 'INSERT INTO blogs (title, category, excerpt, content, date, icon) VALUES (?, ?, ?, ?, ?, ?)';
+            db.query(query, [title, category, excerpt, content, date, icon], (err, result) => {
+                if (err) return res.status(500).json({ error: err.message });
+                res.json({ id: result.insertId, message: 'Blog created successfully' });
+            });
+        });
+
+        // UPDATE blog
+        app.put('/api/blogs/:id', (req, res) => {
+            const { title, category, excerpt, content, icon } = req.body;
+            const query = 'UPDATE blogs SET title=?, category=?, excerpt=?, content=?, icon=? WHERE id=?';
+            db.query(query, [title, category, excerpt, content, icon, req.params.id], (err) => {
+                if (err) return res.status(500).json({ error: err.message });
+                res.json({ message: 'Blog updated successfully' });
+            });
+        });
+
+        // DELETE blog
+        app.delete('/api/blogs/:id', (req, res) => {
+            db.query('DELETE FROM blogs WHERE id=?', [req.params.id], (err) => {
+                if (err) return res.status(500).json({ error: err.message });
+                res.json({ message: 'Blog deleted successfully' });
+            });
+        });
+
+        // UPDATE views
+        app.patch('/api/blogs/:id/view', (req, res) => {
+            db.query('UPDATE blogs SET views = views + 1 WHERE id=?', [req.params.id], (err) => {
+                if (err) return res.status(500).json({ error: err.message });
+                res.json({ message: 'View count updated' });
+            });
+        });
+
+        app.listen(3000, () => console.log('Server running on port 3000'));
+
+        2. UPDATE FRONTEND FUNCTIONS:
+        
+        Replace the in-memory functions with fetch API calls:
+
+        async function loadBlogs() {
+            const response = await fetch('http://localhost:3000/api/blogs');
+            blogs = await response.json();
+            // ... render blogs
+        }
+
+        async function submitBlog(event) {
+            event.preventDefault();
+            const blogData = { ... };
+            await fetch('http://localhost:3000/api/blogs', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(blogData)
+            });
+            loadBlogs();
+        }
+
+        3. DEPLOYMENT:
+        - Host backend on Heroku, Railway, or DigitalOcean
+        - Use services like PlanetScale or AWS RDS for MySQL
+        - Update fetch URLs to your production backend URL
+        */
+    </script>
+</body>
+</html>
