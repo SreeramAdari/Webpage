@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganeswara Sai Sreeram Adari - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: #f0f4ff;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            background: #667eea;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item, .education-item, .project-card {
+            background: #f8f9ff;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+            border-left: 4px solid #764ba2;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover, .education-item:hover, .project-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .project-card {
+            border-left-color: #667eea;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .blog-post {
+            background: #f8f9ff;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .blog-date {
+            color: #764ba2;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .read-more {
+            color: #667eea;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            section {
+                padding: 2rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showSection('home')">Home</a></li>
+            <li><a href="#about" onclick="showSection('about')">About</a></li>
+            <li><a href="#experience" onclick="showSection('experience')">Experience</a></li>
+            <li><a href="#projects" onclick="showSection('projects')">Projects</a></li>
+            <li><a href="#skills" onclick="showSection('skills')">Skills</a></li>
+            <li><a href="#blog" onclick="showSection('blog')">Blog</a></li>
+            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="hero">
+            <h1>Ganeswara Sai Sreeram Adari</h1>
+            <p style="font-size: 1.2rem; color: #555; margin: 1rem 0;">Data Science & AI Enthusiast | Python Developer | Automation Specialist</p>
+            <div class="contact-info">
+                <a href="mailto:sreeramadari@gmail.com">📧 Email</a>
+                <a href="tel:7396989138">📱 7396989138</a>
+                <a href="https://www.linkedin.com/in/ganeswara-sai-sreeram-adari-6b4b18223" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/SreeramAdari" target="_blank">💻 GitHub</a>
+            </div>
+            <p style="margin-top: 1rem; color: #666;">📍 Anakapalle, Vishakapatanam, Andhra Pradesh</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                I'm a Data Science and AI enthusiast with hands-on experience in NLP, web scraping, and no-code automation. 
+                Currently working as an Apprentice at BHEL R&D, where I build real-world solutions using Python, LLMs, and Playwright. 
+                I'm passionate about solving problems using data, automation, and generative AI.
+            </p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Apprentice - Bharat Heavy Electricals Limited (BHEL)</h3>
+                <p style="color: #764ba2; font-weight: 600;">R&D, Hyderabad | Dec 2024 – Nov 2025</p>
+                <ul>
+                    <li>Contributed to industrial R&D projects by automating document workflows using Python and Playwright</li>
+                    <li>Built a scraping automation tool to extract BIS standards using Playwright and stored in MySQL, improving data availability</li>
+                    <li>Collaborated with engineers to build Excel reporting automation with Pandas and Openpyxl</li>
+                    <li>Increased document handling efficiency by ~60% through Python-based automation solutions</li>
+                    <li>Worked with tools like MySQL, Pandas, Playwright, and Excel in a live industrial environment</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <div class="project-card">
+                <h3>BIS Standards Scraping Automation</h3>
+                <p>Created an automated web-scraping solution with Playwright, MySQL, Pandas, and Openpyxl to process and organize Bureau of Indian Standards (BIS) documents for BHEL.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Sentiment Analysis with NLP</h3>
+                <p>Applied natural language processing to classify user reviews by sentiment, improving customer feedback insights as part of an ExcelR capstone project.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Inventory Management</h3>
+                <p>Developed a Python-based inventory management system with machine-learning models to predict stockouts, balance class data with SMOTE, and automate keyword extraction from Excel for faster material classification and stock analysis.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Bankruptcy Prevention</h3>
+                <p>Built a machine-learning model using financial indicators to predict company bankruptcy, featuring data preprocessing, feature engineering, and evaluation of multiple classification algorithms for high accuracy.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Solar Power Prediction</h3>
+                <p>Implemented a forecasting model to predict solar energy output from weather and historical power data, enabling better energy planning and grid management.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Sign Language Recognition</h3>
+                <p>Trained a custom computer-vision model to recognize and classify sign language gestures from image data, facilitating accessible communication.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Light Sensory Car (IoT Project)</h3>
+                <p>Designed an IoT-enabled car navigation system using light sensors and microcontroller integration for autonomous movement based on environmental lighting.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Daily Journal (Web App)</h3>
+                <p>Developed a responsive, browser-based journal application using HTML, CSS, and JavaScript for easy daily note-taking and data storage.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming</h4>
+                    <p>Python, C/C++, HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Data Science</h4>
+                    <p>Pandas, NumPy, Scikit-learn, SMOTE, Model Evaluation, Data Preprocessing</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Machine Learning & AI</h4>
+                    <p>NLP, Sentiment Analysis, Classification Models, LLM Workflows, Prompt Engineering</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Automation</h4>
+                    <p>Playwright, Make, Zapier, Web Scraping</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Data Tools</h4>
+                    <p>MySQL, Tableau, Excel (Advanced), Openpyxl</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Soft Skills</h4>
+                    <p>Communication, Teamwork, Analytical Thinking</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Certifications</h3>
+            <div style="margin-top: 1rem;">
+                <span class="cert-badge">Data Science - ExcelR</span>
+                <span class="cert-badge">Advanced Google Analytics</span>
+                <span class="cert-badge">Generative AI Mastermind - Outskill</span>
+                <span class="cert-badge">Python Basics - Infosys Springboard</span>
+                <span class="cert-badge">Communication Skills - TCS iON</span>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2>Blog</h2>
+            <p style="margin-bottom: 2rem; color: #666;">Sharing insights on Data Science, AI, and Automation</p>
+
+            <div class="blog-post" onclick="alert('Full blog post feature coming soon!')">
+                <div class="blog-date">October 20, 2025</div>
+                <h3>Automating Document Workflows with Playwright and Python</h3>
+                <p>My experience at BHEL R&D taught me valuable lessons about industrial automation. In this post, I share practical tips for building robust web scraping solutions that handle real-world complexity...</p>
+                <span class="read-more">Read More →</span>
+            </div>
+
+            <div class="blog-post" onclick="alert('Full blog post feature coming soon!')">
+                <div class="blog-date">October 10, 2025</div>
+                <h3>Getting Started with NLP: Sentiment Analysis Project Walkthrough</h3>
+                <p>Natural Language Processing can seem intimidating at first, but with the right approach, anyone can build powerful text analysis tools. Here's how I built my sentiment analysis system...</p>
+                <span class="read-more">Read More →</span>
+            </div>
+
+            <div class="blog-post" onclick="alert('Full blog post feature coming soon!')">
+                <div class="blog-date">September 28, 2025</div>
+                <h3>The Power of No-Code Automation: Make vs Zapier</h3>
+                <p>No-code tools are revolutionizing how we approach automation. After working with both Make and Zapier extensively, I've discovered the strengths and use cases for each platform...</p>
+                <span class="read-more">Read More →</span>
+            </div>
+
+            <div class="blog-post" onclick="alert('Full blog post feature coming soon!')">
+                <div class="blog-date">September 15, 2025</div>
+                <h3>Machine Learning for Business: Predicting Bankruptcy</h3>
+                <p>Financial prediction models can save companies millions. In this deep dive, I explain how machine learning algorithms analyze financial indicators to predict business failure...</p>
+                <span class="read-more">Read More →</span>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            </p>
+            <div class="contact-info">
+                <a href="mailto:sreeramadari@gmail.com">📧 sreeramadari@gmail.com</a>
+                <a href="tel:7396989138">📱 +91 7396989138</a>
+                <a href="https://www.linkedin.com/in/ganeswara-sai-sreeram-adari-6b4b18223" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/SreeramAdari" target="_blank">💻 GitHub</a>
+            </div>
+        </section>
+
+        <div class="education-item">
+            <h3>Education</h3>
+            <p><strong>B.Tech in Information Technology</strong> - Vignan Institute Of Information Technology</p>
+            <p>CGPA: 7.3 | Jul 2024</p>
+            <p style="margin-top: 1rem;"><strong>Intermediate (MPC)</strong> - Tirumala Junior College</p>
+            <p>CGPA: 9.3 | Apr 2020</p>
+            <p style="margin-top: 1rem;"><strong>10th Grade</strong> - Bhashyam Public School</p>
+            <p>CGPA: 9.3 | Mar 2018</p>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color: #667eea; font-weight: 600;">© 2025 Ganeswara Sai Sreeram Adari. All rights reserved.</p>
+        <p style="color: #666; margin-top: 0.5rem;">Languages: English • Telugu • Hindi</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeIn 0.6s ease';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
